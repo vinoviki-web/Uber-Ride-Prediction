@@ -1,0 +1,42 @@
+Predict how many people will use the taxi service every week based on price, population, income, and parking charges.
+
+
+
+
+
+Here is a small, crisp, easy-to-understand explanation of your dataset:
+
+1. Priceperweek
+
+Meaning: Cost of bus/train ticket per week.
+Example: 15 = ₹15 weekly ticket.
+Effect: Higher price → fewer people use transport.
+
+2. Population
+
+Meaning: Total number of people in the city.
+Example: 1800000 = 18 lakh people.
+Effect: More population → more riders.
+
+3. Monthlyincome
+
+Meaning: Average monthly salary of people.
+Example: 5800 = ₹5800/month income.
+Effect: Higher income → some people may use private vehicles instead of bus/train.
+
+4. Averageparkingpermonth
+
+Meaning: Monthly parking cost for private vehicles.
+Example: 50 = ₹50 parking charge/month.
+Effect: Higher parking cost → more people choose bus/train.
+
+5. Numberofweeklyriders (Output)
+
+Meaning: Total people using public transport in one week.
+Example: 192000 = 1,92,000 people traveled in a week.
+
+Simple idea:
+
+The model predicts:
+
+“How many people will use public transport based on ticket price, population, income, and parking cost?”
