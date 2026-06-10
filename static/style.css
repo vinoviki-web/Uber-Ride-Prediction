@@ -1,116 +1,105 @@
-html{
-	height: 100%;
-	margin: 0;
-	background-color: #fbfaf9;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
-	font-family: Arial, Helvetica,sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-container{
     width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-}
-/* Website Title */
-.container{
-    padding: 30px;
-	position: relative;
-	background: linear-gradient(45deg, #51e9a2, #eb2574, #5e4df7);
-	background-size: 500% 500%;
-	animation: change-gradient 10s ease-in-out infinite;
-}
-@keyframes change-gradient {
-	0%{
-		background-position: 0 50%;
-	}
-	50%{
-		background-position: 100% 50%;
-	}
-	100%{
-		background-position: 0 50%;
-	}
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container-heading{
-    margin: 0;
-}
-
-.heading_font{
-    color: #ffffff;
-	font-family: 'Pacifico', cursive;
-	font-size: 35px;
-	font-weight: normal;
-}
-
-.description p{
-	color: #ffffff;
-    font-style: italic;
-    font-size: 14px;
-    margin: -5px 0 0;
-}
-
-/* Text Area */
-.ml-container{
-    margin: 30px 0;
-	flex: 1 0 auto;
-}
-
-.form-input {
-	text-align: center;
-	width: 350px;
-	height: 25px;
-	margin-bottom: 5px;
-}
-
-/* Predict Button */
-.my-cta-button{
-	background: #8df595;
-   	border: 2px solid #000000;
-    border-radius: 1000px;
-    box-shadow: 3px 3px #8c8c8c;
-	margin-top: 10px;
-    padding: 10px 36px;
-    color: #000000;
-    display: inline-block;
-   	font: italic bold 20px/1 "Calibri", sans-serif;
+.card{
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 25px;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
     text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 
-.my-cta-button:hover{
-    color: #4d089a;
-    border: 2px solid #4d089a;
+h1{
+    color: white;
+    font-size: 34px;
+    margin-bottom: 10px;
 }
 
-.my-cta-button:active{
-    box-shadow: 0 0;
+.subtitle{
+    color: #cbd5e1;
+    margin-bottom: 30px;
+    font-size: 15px;
 }
 
-/* Contact */
-.contact-icon{
-	color:black;
-	padding: 7px;
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
-.contact-icon:hover{
-	color: #8c8c8c;
+input{
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 14px;
+    outline: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 15px;
 }
 
-/* Footer Section */
-
-.footer{
-	flex-shrink: 0;
-	position: relative;
-	padding: 20px;
-	background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
-	background-size: 500% 500%;
-	animation: change-gradient 10s ease-in-out infinite;
+input::placeholder{
+    color: #cbd5e1;
 }
 
-.footer-description{
-	color: #ffffff;
-	margin: 0;
-	font-size: 12px;
+button{
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    transform: translateY(-2px);
+    background: #16a34a;
+}
+
+.result-box{
+    margin-top: 25px;
+    padding: 18px;
+    background: rgba(34,197,94,0.15);
+    border: 1px solid rgba(34,197,94,0.4);
+    border-radius: 14px;
+    color: #4ade80;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+@media(max-width: 500px){
+    .card{
+        padding: 25px;
+    }
+
+    h1{
+        font-size: 28px;
+    }
 }

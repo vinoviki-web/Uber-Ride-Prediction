@@ -3,35 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
-    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <title>Uber Rides Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-    <div class="container">
-        <h2 class='container-heading'><span class="heading_font">Uber Rides Predictor</span></h2>
-        <div class='description'>
-            <p>A Machine Learning Web App, Built with Flask</p>
+
+    <div class="main-container">
+
+        <div class="card">
+
+            <h1>🚖 Uber Ride Predictor</h1>
+
+            <p class="subtitle">
+                Predict the number of weekly riders using Machine Learning
+            </p>
+
+            <form action="{{ url_for('predict') }}" method="POST">
+
+                <input 
+                    type="text" 
+                    name="Priceperweek" 
+                    placeholder="Price per week (eg. 25)" 
+                    required
+                >
+
+                <input 
+                    type="text" 
+                    name="Population" 
+                    placeholder="Population (eg. 1800000)" 
+                    required
+                >
+
+                <input 
+                    type="text" 
+                    name="Monthlyincome" 
+                    placeholder="Monthly income (eg. 20000)" 
+                    required
+                >
+
+                <input 
+                    type="text" 
+                    name="Averageparkingpermonth" 
+                    placeholder="Parking per month (eg. 90)" 
+                    required
+                >
+
+                <button type="submit">
+                    Predict Riders
+                </button>
+
+            </form>
+
+            {% if predict_text %}
+            <div class="result-box">
+                {{ predict_text }}
+            </div>
+            {% endif %}
+
         </div>
-    </div>
 
-    <div class="ml-container">
-        <form action="{{url_for('predict')}}" method="POST">
-            <input class="form-input" type="text" name="Priceperweek" placeholder="Price per week eg. 25" required="required"><br>
-            <input class="form-input" type="text" name="Population" placeholder="Population eg.1800000" required="required"><br>
-            <input class="form-input" type="text" name="Monthlyincome" placeholder="Monthly income eg. 20000" required="required"><br>
-            <input class="form-input" type="text" name="Averageparkingpermonth" placeholder="Average parking per month eg. 90" required="required"><br>
-            <button type="submit" class="my-cta-button">Predict</button>
-        </form>
     </div>
-    <br>
-    <br>
-    {{ predict_text }}
-    <br>
-    <br>
-
 
 </body>
 </html>
